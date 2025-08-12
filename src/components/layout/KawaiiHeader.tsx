@@ -27,9 +27,7 @@ export const KawaiiHeader = () => {
       <div className="flex items-center justify-between p-4">
         <div className="flex items-center gap-2">
           <Heart className="w-8 h-8 text-kawaii-pink animate-pulse" />
-          <h1 className="text-2xl font-bold gradient-text font-kawaii">
-            Kawaii Todo
-          </h1>
+          <h1 className="text-2xl font-bold gradient-text font-kawaii"> My todos 💕</h1>
         </div>
         
         <div className="flex items-center gap-2">
