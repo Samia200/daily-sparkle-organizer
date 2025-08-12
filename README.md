@@ -1,3 +1,5 @@
+##live demo 
+https://preview--daily-sparkle-organizer.lovable.app/
 ## How to run
 
 1. Install dependencies:
