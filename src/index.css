@@ -2,73 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Kawaii Todo App Design System - Soft & Cute Aesthetic */
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
 @layer base {
   :root {
-    /* Base colors - soft and dreamy */
-    --background: 310 15% 97%;
-    --foreground: 260 15% 25%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-    /* Card components */
-    --card: 315 25% 95%;
-    --card-foreground: 260 15% 25%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    /* Popover components */
-    --popover: 315 25% 98%;
-    --popover-foreground: 260 15% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    /* Primary brand colors - soft purple */
-    --primary: 280 60% 75%;
-    --primary-foreground: 320 50% 98%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-    /* Secondary colors - soft pink */
-    --secondary: 320 40% 90%;
-    --secondary-foreground: 280 30% 35%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    /* Muted colors */
-    --muted: 310 20% 92%;
-    --muted-foreground: 260 12% 55%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    /* Accent colors - lavender */
-    --accent: 270 45% 88%;
-    --accent-foreground: 280 30% 35%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    /* Destructive - soft coral */
-    --destructive: 350 65% 75%;
-    --destructive-foreground: 320 50% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    /* Success - soft mint */
-    --success: 140 35% 75%;
-    --success-foreground: 140 30% 25%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
-    /* Borders and inputs */
-    --border: 310 20% 85%;
-    --input: 315 25% 93%;
-    --ring: 280 60% 75%;
-
-    /* Custom kawaii colors */
-    --kawaii-pink: 330 60% 85%;
-    --kawaii-purple: 280 55% 80%;
-    --kawaii-lavender: 270 45% 88%;
-    --kawaii-cream: 45 35% 95%;
-    --kawaii-mint: 140 35% 85%;
-
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--kawaii-purple)), hsl(var(--kawaii-pink)));
-    --gradient-soft: linear-gradient(180deg, hsl(var(--kawaii-cream)), hsl(var(--kawaii-lavender)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--kawaii-cream)));
-
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(var(--kawaii-purple) / 0.2);
-    --shadow-card: 0 8px 32px -8px hsl(var(--kawaii-purple) / 0.15);
-    --shadow-hover: 0 12px 40px -10px hsl(var(--kawaii-pink) / 0.25);
-
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --bounce-soft: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-    --radius: 1rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -88,60 +56,41 @@
   }
 
   .dark {
-    /* Dark mode with cozy purple vibes */
-    --background: 260 25% 8%;
-    --foreground: 310 20% 92%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-    --card: 260 20% 12%;
-    --card-foreground: 310 20% 92%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 260 20% 10%;
-    --popover-foreground: 310 20% 92%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 280 55% 70%;
-    --primary-foreground: 260 25% 8%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 270 15% 18%;
-    --secondary-foreground: 310 20% 92%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 270 15% 15%;
-    --muted-foreground: 310 12% 65%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 280 20% 20%;
-    --accent-foreground: 310 20% 92%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 350 60% 65%;
-    --destructive-foreground: 260 25% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
-    --success: 140 30% 65%;
-    --success-foreground: 260 25% 8%;
-
-    --border: 270 15% 20%;
-    --input: 270 15% 18%;
-    --ring: 280 55% 70%;
-
-    --kawaii-pink: 330 50% 65%;
-    --kawaii-purple: 280 50% 70%;
-    --kawaii-lavender: 270 40% 75%;
-    --kawaii-cream: 45 25% 85%;
-    --kawaii-mint: 140 30% 70%;
-
-    --gradient-primary: linear-gradient(135deg, hsl(var(--kawaii-purple)), hsl(var(--kawaii-pink)));
-    --gradient-soft: linear-gradient(180deg, hsl(260 20% 15%), hsl(280 15% 18%));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(270 15% 15%));
-
-    --shadow-soft: 0 4px 20px -4px hsl(280 40% 5% / 0.4);
-    --shadow-card: 0 8px 32px -8px hsl(280 40% 5% / 0.3);
-    --shadow-hover: 0 12px 40px -10px hsl(var(--kawaii-purple) / 0.3);
-
-    --sidebar-background: 260 20% 10%;
-    --sidebar-foreground: 310 20% 90%;
-    --sidebar-primary: 280 50% 70%;
-    --sidebar-primary-foreground: 260 25% 8%;
-    --sidebar-accent: 270 15% 15%;
-    --sidebar-accent-foreground: 310 20% 90%;
-    --sidebar-border: 270 15% 20%;
-    --sidebar-ring: 280 55% 70%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -152,71 +101,5 @@
 
   body {
     @apply bg-background text-foreground;
-    background: var(--gradient-soft);
-    min-height: 100vh;
   }
-}
-
-@layer utilities {
-  /* Kawaii component utilities */
-  .kawaii-card {
-    @apply bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl;
-    background: var(--gradient-card);
-    box-shadow: var(--shadow-card);
-  }
-
-  .kawaii-button {
-    @apply rounded-xl font-medium transition-all duration-300;
-    box-shadow: var(--shadow-soft);
-  }
-
-  .kawaii-button:hover {
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-2px);
-  }
-
-  .kawaii-input {
-    @apply bg-input/80 backdrop-blur-sm border border-border/50 rounded-xl;
-    transition: var(--transition-smooth);
-  }
-
-  .kawaii-input:focus {
-    box-shadow: 0 0 0 3px hsl(var(--ring) / 0.2);
-  }
-
-  /* Animation classes */
-  .animate-bounce-soft {
-    animation: bounce-soft 0.6s var(--bounce-soft);
-  }
-
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
-  }
-
-  /* Gradient text */
-  .gradient-text {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
-@keyframes bounce-soft {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes glow {
-  from { filter: brightness(1) drop-shadow(0 0 10px hsl(var(--kawaii-purple) / 0.3)); }
-  to { filter: brightness(1.1) drop-shadow(0 0 20px hsl(var(--kawaii-pink) / 0.4)); }
 }
