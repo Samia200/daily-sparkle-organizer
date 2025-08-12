@@ -25,41 +25,13 @@ interface Goal {
 }
 
 const HomePage = () => {
-  // Sample data for demonstration
+  // Start with empty data for new users
   const [todos, setTodos] = useState<Record<string, Todo[]>>({
-    today: [
-      { id: '1', title: 'Review morning emails', completed: true, priority: 'medium', time: '09:00' },
-      { id: '2', title: 'Complete project proposal', completed: false, priority: 'high', time: '14:00' },
-      { id: '3', title: 'Take a walk in the park', completed: false, priority: 'low', time: '18:00' }
-    ],
-    tomorrow: [
-      { id: '4', title: 'Team meeting preparation', completed: false, priority: 'high', time: '10:00' },
-      { id: '5', title: 'Grocery shopping', completed: false, priority: 'medium' }
-    ]
+    today: [],
+    tomorrow: []
   })
 
-  const [goals, setGoals] = useState<Goal[]>([
-    {
-      id: '1',
-      title: 'Learn Japanese',
-      description: 'Practice Japanese conversation daily',
-      progress: 65,
-      target: 100,
-      duration: '3 months',
-      category: 'learning',
-      emoji: '🇯🇵'
-    },
-    {
-      id: '2',
-      title: 'Morning Yoga',
-      description: 'Practice yoga every morning',
-      progress: 80,
-      target: 100,
-      duration: '30 days',
-      category: 'health',
-      emoji: '🧘‍♀️'
-    }
-  ])
+  const [goals, setGoals] = useState<Goal[]>([])
 
   // Sample weekly data
   const weekData = [
