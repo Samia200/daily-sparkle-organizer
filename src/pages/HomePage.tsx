@@ -33,15 +33,15 @@ const HomePage = () => {
 
   const [goals, setGoals] = useState<Goal[]>([])
 
-  // Sample weekly data
+  // Start with empty weekly data
   const weekData = [
-    { day: 'Monday', completed: 8, total: 10, percentage: 80 },
-    { day: 'Tuesday', completed: 6, total: 8, percentage: 75 },
-    { day: 'Wednesday', completed: 9, total: 10, percentage: 90 },
-    { day: 'Thursday', completed: 5, total: 7, percentage: 71 },
-    { day: 'Friday', completed: 4, total: 6, percentage: 67 },
-    { day: 'Saturday', completed: 3, total: 4, percentage: 75 },
-    { day: 'Sunday', completed: 2, total: 3, percentage: 67 }
+    { day: 'Monday', completed: 0, total: 0, percentage: 0 },
+    { day: 'Tuesday', completed: 0, total: 0, percentage: 0 },
+    { day: 'Wednesday', completed: 0, total: 0, percentage: 0 },
+    { day: 'Thursday', completed: 0, total: 0, percentage: 0 },
+    { day: 'Friday', completed: 0, total: 0, percentage: 0 },
+    { day: 'Saturday', completed: 0, total: 0, percentage: 0 },
+    { day: 'Sunday', completed: 0, total: 0, percentage: 0 }
   ]
 
   const addTodo = (day: string, title: string) => {
