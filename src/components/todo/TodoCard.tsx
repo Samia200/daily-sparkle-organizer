@@ -3,7 +3,7 @@ import { KawaiiCard } from "@/components/ui/kawaii-card"
 import { KawaiiButton } from "@/components/ui/kawaii-button"
 import { KawaiiInput } from "@/components/ui/kawaii-input"
 import { Checkbox } from "@/components/ui/checkbox"
-import { Plus, Calendar, Clock, Star } from "lucide-react"
+import { Plus, Calendar, Clock, Star, X } from "lucide-react"
 
 interface Todo {
   id: string
@@ -19,9 +19,10 @@ interface TodoCardProps {
   todos: Todo[]
   onAddTodo: (title: string) => void
   onToggleTodo: (id: string) => void
+  onDeleteTodo: (id: string) => void
 }
 
-export const TodoCard = ({ title, date, todos, onAddTodo, onToggleTodo }: TodoCardProps) => {
+export const TodoCard = ({ title, date, todos, onAddTodo, onToggleTodo, onDeleteTodo }: TodoCardProps) => {
   const [newTodo, setNewTodo] = useState("")
   const [showInput, setShowInput] = useState(false)
 
@@ -98,7 +99,17 @@ export const TodoCard = ({ title, date, todos, onAddTodo, onToggleTodo }: TodoCa
                   </div>
                 )}
               </div>
-              <span className="text-lg">{getPriorityIcon(todo.priority)}</span>
+              <div className="flex items-center gap-2">
+                <span className="text-lg">{getPriorityIcon(todo.priority)}</span>
+                <KawaiiButton
+                  size="sm"
+                  variant="ghost"
+                  onClick={() => onDeleteTodo(todo.id)}
+                  className="h-6 w-6 p-0 text-muted-foreground hover:text-destructive"
+                >
+                  <X className="w-3 h-3" />
+                </KawaiiButton>
+              </div>
             </div>
           ))}
         </div>

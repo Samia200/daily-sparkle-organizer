@@ -3,7 +3,7 @@ import { KawaiiCard, KawaiiCardContent, KawaiiCardHeader, KawaiiCardTitle } from
 import { KawaiiButton } from "@/components/ui/kawaii-button"
 import { KawaiiInput } from "@/components/ui/kawaii-input"
 import { Progress } from "@/components/ui/progress"
-import { Target, Plus, Timer, TrendingUp } from "lucide-react"
+import { Target, Plus, Timer, TrendingUp, X } from "lucide-react"
 
 interface Goal {
   id: string
@@ -20,9 +20,10 @@ interface GoalsCardProps {
   goals: Goal[]
   onAddGoal: (goal: Omit<Goal, 'id'>) => void
   onUpdateProgress: (id: string, progress: number) => void
+  onDeleteGoal: (id: string) => void
 }
 
-export const GoalsCard = ({ goals, onAddGoal, onUpdateProgress }: GoalsCardProps) => {
+export const GoalsCard = ({ goals, onAddGoal, onUpdateProgress, onDeleteGoal }: GoalsCardProps) => {
   const [showAddForm, setShowAddForm] = useState(false)
   const [newGoal, setNewGoal] = useState({
     title: "",
@@ -82,9 +83,19 @@ export const GoalsCard = ({ goals, onAddGoal, onUpdateProgress }: GoalsCardProps
                     <p className="text-sm text-muted-foreground">{goal.description}</p>
                   </div>
                 </div>
-                <span className={`text-xs px-2 py-1 rounded-full bg-secondary/50 ${getCategoryColor(goal.category)}`}>
-                  {goal.category}
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className={`text-xs px-2 py-1 rounded-full bg-secondary/50 ${getCategoryColor(goal.category)}`}>
+                    {goal.category}
+                  </span>
+                  <KawaiiButton
+                    size="sm"
+                    variant="ghost"
+                    onClick={() => onDeleteGoal(goal.id)}
+                    className="h-6 w-6 p-0 text-muted-foreground hover:text-destructive"
+                  >
+                    <X className="w-3 h-3" />
+                  </KawaiiButton>
+                </div>
               </div>
 
               <div className="space-y-2">

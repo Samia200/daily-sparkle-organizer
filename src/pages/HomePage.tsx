@@ -94,6 +94,13 @@ const HomePage = () => {
     }))
   }
 
+  const deleteTodo = (day: string, id: string) => {
+    setTodos(prev => ({
+      ...prev,
+      [day]: prev[day]?.filter(todo => todo.id !== id) || []
+    }))
+  }
+
   const addGoal = (newGoal: Omit<Goal, 'id'>) => {
     const goal: Goal = {
       ...newGoal,
@@ -106,6 +113,10 @@ const HomePage = () => {
     setGoals(prev => prev.map(goal =>
       goal.id === id ? { ...goal, progress } : goal
     ))
+  }
+
+  const deleteGoal = (id: string) => {
+    setGoals(prev => prev.filter(goal => goal.id !== id))
   }
 
   const getCurrentDate = () => {
@@ -151,6 +162,7 @@ const HomePage = () => {
               todos={todos.today || []}
               onAddTodo={(title) => addTodo('today', title)}
               onToggleTodo={(id) => toggleTodo('today', id)}
+              onDeleteTodo={(id) => deleteTodo('today', id)}
             />
             
             <TodoCard
@@ -159,6 +171,7 @@ const HomePage = () => {
               todos={todos.tomorrow || []}
               onAddTodo={(title) => addTodo('tomorrow', title)}
               onToggleTodo={(id) => toggleTodo('tomorrow', id)}
+              onDeleteTodo={(id) => deleteTodo('tomorrow', id)}
             />
           </div>
 
@@ -168,6 +181,7 @@ const HomePage = () => {
               goals={goals}
               onAddGoal={addGoal}
               onUpdateProgress={updateGoalProgress}
+              onDeleteGoal={deleteGoal}
             />
           </div>
 
